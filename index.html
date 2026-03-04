@@ -6,35 +6,61 @@
 <title>Hey Matcha</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
+*{
     margin:0;
-    background:#f4f8f3;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
+body{
+    background: linear-gradient(135deg,#d4f4dd,#f4fff6);
+}
+
+/* HEADER */
 header{
-    background:#2e7d32;
+    background: linear-gradient(90deg,#1b5e20,#2e7d32);
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
+header h1{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+header p{
+    opacity:0.9;
+}
+
+/* CONTAINER */
 .container{
-    padding:20px;
+    padding:30px 20px;
 }
 
+/* MENU GRID */
 .menu{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
 }
 
+/* CARD */
 .card{
     background:white;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
     overflow:hidden;
     text-align:center;
+    transition:0.3s ease;
+    position:relative;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -44,28 +70,70 @@ header{
 }
 
 .card h3{
-    margin:10px 0 5px;
+    margin:15px 0 5px;
+    font-size:18px;
 }
 
 .price{
-    color:#2e7d32;
+    color:#1b5e20;
     font-weight:bold;
-    margin-bottom:10px;
+    margin-bottom:15px;
+    font-size:16px;
 }
 
+/* BUTTON */
 button{
-    background:#2e7d32;
+    background: linear-gradient(90deg,#2e7d32,#43a047);
     color:white;
     border:none;
-    padding:10px;
-    margin-bottom:15px;
-    border-radius:6px;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius:30px;
     cursor:pointer;
     width:80%;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 button:hover{
-    background:#1b5e20;
+    transform:scale(1.05);
+    background: linear-gradient(90deg,#1b5e20,#2e7d32);
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#ff9800;
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* FLOATING WA */
+.floating-wa{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.floating-wa:hover{
+    transform:scale(1.1);
 }
 </style>
 </head>
@@ -74,55 +142,61 @@ button:hover{
 
 <header>
 <h1>Hey Matcha 🍵</h1>
-<p>100% Pure Matcha</p>
-<p>Order via WhatsApp: 0881-0247-84926</p>
+<p>Premium & 100% Pure Matcha</p>
+<p>Order Cepat via WhatsApp</p>
 </header>
 
 <div class="container">
 <div class="menu">
 
 <div class="card">
-<img src="1.png" alt="Signature Matcha">
+<div class="badge">Best Seller</div>
+<img src="1.png">
 <h3>Signature Matcha</h3>
 <p class="price">Rp 12.000</p>
-<button onclick="order('Signature Matcha - Rp 12.000')">Pesan</button>
+<button onclick="order('Signature Matcha - Rp 12.000')">Pesan Sekarang</button>
 </div>
 
 <div class="card">
-<img src="2.png" alt="Caramelo Matcha">
+<img src="2.png">
 <h3>Caramelo Matcha</h3>
 <p class="price">Rp 14.000</p>
-<button onclick="order('Caramelo Matcha - Rp 14.000')">Pesan</button>
+<button onclick="order('Caramelo Matcha - Rp 14.000')">Pesan Sekarang</button>
 </div>
 
 <div class="card">
-<img src="3.png" alt="Cookies Matcha">
+<img src="3.png">
 <h3>Cookies Matcha</h3>
 <p class="price">Rp 14.000</p>
-<button onclick="order('Cookies Matcha - Rp 14.000')">Pesan</button>
+<button onclick="order('Cookies Matcha - Rp 14.000')">Pesan Sekarang</button>
 </div>
 
 <div class="card">
-<img src="4.png" alt="Yoghurt Matcha">
+<img src="4.png">
 <h3>Yoghurt Matcha</h3>
 <p class="price">Rp 16.000</p>
-<button onclick="order('Yoghurt Matcha - Rp 16.000')">Pesan</button>
+<button onclick="order('Yoghurt Matcha - Rp 16.000')">Pesan Sekarang</button>
 </div>
 
 <div class="card">
-<img src="5.png" alt="Lemonade Matcha">
+<img src="5.png">
 <h3>Lemonade Matcha</h3>
 <p class="price">Rp 12.000</p>
-<button onclick="order('Lemonade Matcha - Rp 12.000')">Pesan</button>
+<button onclick="order('Lemonade Matcha - Rp 12.000')">Pesan Sekarang</button>
 </div>
 
 </div>
+</div>
+
+<!-- Floating WhatsApp -->
+<div class="floating-wa" onclick="order('Halo saya mau tanya menu')">
+💬
 </div>
 
 <script>
 function order(menu){
     let nomorWA = "62881024784926";
-    let pesan = 
+    let pesan =
         "Halo Hey Matcha 🍵%0A%0A" +
         "Saya mau pesan:%0A" +
         menu + "%0A%0A" +
