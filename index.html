@@ -75,44 +75,45 @@ button:hover{
 <header>
 <h1>Hey Matcha 🍵</h1>
 <p>100% Pure Matcha</p>
+<p>Order via WhatsApp: 0881-0247-84926</p>
 </header>
 
 <div class="container">
 <div class="menu">
 
 <div class="card">
-<img src="signature.jpg">
+<img src="signature.jpg" alt="Signature Matcha">
 <h3>Signature Matcha</h3>
 <p class="price">Rp 12.000</p>
-<button onclick="order('Signature Matcha - 12K')">Pesan</button>
+<button onclick="order('Signature Matcha - Rp 12.000')">Pesan</button>
 </div>
 
 <div class="card">
-<img src="caramelo.jpg">
+<img src="caramelo.jpg" alt="Caramelo Matcha">
 <h3>Caramelo Matcha</h3>
 <p class="price">Rp 14.000</p>
-<button onclick="order('Caramelo Matcha - 14K')">Pesan</button>
+<button onclick="order('Caramelo Matcha - Rp 14.000')">Pesan</button>
 </div>
 
 <div class="card">
-<img src="cookies.jpg">
+<img src="cookies.jpg" alt="Cookies Matcha">
 <h3>Cookies Matcha</h3>
 <p class="price">Rp 14.000</p>
-<button onclick="order('Cookies Matcha - 14K')">Pesan</button>
+<button onclick="order('Cookies Matcha - Rp 14.000')">Pesan</button>
 </div>
 
 <div class="card">
-<img src="yoghurt.jpg">
+<img src="yoghurt.jpg" alt="Yoghurt Matcha">
 <h3>Yoghurt Matcha</h3>
 <p class="price">Rp 16.000</p>
-<button onclick="order('Yoghurt Matcha - 16K')">Pesan</button>
+<button onclick="order('Yoghurt Matcha - Rp 16.000')">Pesan</button>
 </div>
 
 <div class="card">
-<img src="lemonade.jpg">
+<img src="lemonade.jpg" alt="Lemonade Matcha">
 <h3>Lemonade Matcha</h3>
 <p class="price">Rp 12.000</p>
-<button onclick="order('Lemonade Matcha - 12K')">Pesan</button>
+<button onclick="order('Lemonade Matcha - Rp 12.000')">Pesan</button>
 </div>
 
 </div>
@@ -120,9 +121,15 @@ button:hover{
 
 <script>
 function order(menu){
-    let nomorWA = "6281234567890"; // GANTI NOMOR WA KAMU
-    let pesan = "Halo Hey Matcha 🍵%0ASaya mau pesan:%0A" + menu;
-    window.open("https://wa.me/" + nomorWA + "?text=" + pesan);
+    let nomorWA = "62881024784926";
+    let pesan = 
+        "Halo Hey Matcha 🍵%0A%0A" +
+        "Saya mau pesan:%0A" +
+        menu + "%0A%0A" +
+        "Nama:%0A" +
+        "Alamat:%0A" +
+        "Metode bayar:";
+    window.open("https://wa.me/" + nomorWA + "?text=" + pesan, "_blank");
 }
 </script>
 
