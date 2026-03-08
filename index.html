@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,11 +27,11 @@ padding:25px;
 
 .hero{
 height:60vh;
+background:#1b5e20;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:#1b5e20;
 color:white;
 text-align:center;
 }
@@ -153,6 +154,8 @@ margin:5px;
 
 <button class="gofood" onclick="gofood()">Order via GoFood</button>
 
+<button onclick="openMap()">Lokasi Toko</button>
+
 </header>
 
 <div class="hero">
@@ -230,9 +233,7 @@ Keranjang: <span id="jumlah">0</span>
 
 <h2>Lokasi Toko</h2>
 
-<iframe width="100%" height="300"
-src="https://maps.google.com/maps?q=Cikande&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
+<button onclick="openMap()">Buka Google Maps</button>
 
 </div>
 
@@ -251,6 +252,7 @@ src="https://maps.google.com/maps?q=Cikande&t=&z=13&ie=UTF8&iwloc=&output=embed"
 <div class="login">
 
 <input id="user" placeholder="username">
+
 <input id="pass" type="password" placeholder="password">
 
 <button onclick="login()">Login</button>
@@ -317,6 +319,12 @@ window.open("https://gofood.link/a/SStZqes");
 
 }
 
+function openMap(){
+
+window.open("https://maps.app.goo.gl/2bTewL3PCXvLfiDo6");
+
+}
+
 function closePromo(){
 document.getElementById("promo").style.display="none";
 }
@@ -354,4 +362,5 @@ data:[10,6,4]
 </script>
 
 </body>
+
 </html>
