@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Keranjang Hey Matcha</title>
-
-<style>
+<!DOCTYPE html><html lang="id">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Keranjang Hey Matcha</title><style>
 
 body{
 font-family:Arial;
 margin:0;
-background:#f4f8f3;
+
+/* BACKGROUND FOTO */
+
+background:
+linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url("bg-cart.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
+
+/* HEADER */
 
 header{
 background:#2e7d32;
@@ -22,25 +26,34 @@ padding:20px;
 text-align:center;
 }
 
+/* CONTAINER */
+
 .container{
 max-width:600px;
-margin:auto;
+margin:40px auto;
 padding:20px;
 }
 
+/* ITEM */
+
 .item{
-background:white;
+background:rgba(255,255,255,0.95);
 padding:15px;
 margin-bottom:10px;
 border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
+
+/* TOTAL */
 
 .total{
 font-size:20px;
 font-weight:bold;
 margin-top:20px;
+color:white;
 }
+
+/* BUTTON */
 
 button{
 width:100%;
@@ -49,6 +62,7 @@ margin-top:10px;
 border:none;
 border-radius:8px;
 cursor:pointer;
+font-size:16px;
 }
 
 .checkout{
@@ -61,35 +75,15 @@ background:#f44336;
 color:white;
 }
 
-</style>
+button:hover{
+opacity:0.9;
+}
 
-</head>
-
-<body>
-
-<header>
-
-<h1>Keranjang Belanja 🛒</h1>
-
-</header>
-
-<div class="container">
-
-<div id="cartItems"></div>
-
-<div class="total" id="totalPrice"></div>
-
-<button class="checkout" onclick="checkout()">
+</style></head><body><header><h1>Keranjang Belanja 🛒</h1></header><div class="container"><div id="cartItems"></div><div class="total" id="totalPrice"></div><button class="checkout" onclick="checkout()">
 Checkout WhatsApp
-</button>
-
-<button class="clear" onclick="clearCart()">
+</button><button class="clear" onclick="clearCart()">
 Hapus Keranjang
-</button>
-
-</div>
-
-<script>
+</button></div><script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -133,8 +127,4 @@ location.reload();
 
 }
 
-</script>
-
-</body>
-
-</html>
+</script></body></html>
