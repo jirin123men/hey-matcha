@@ -6,8 +6,6 @@ body{
 font-family:Arial;
 margin:0;
 
-/* BACKGROUND FOTO */
-
 background:
 linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
 url("bg.png");
@@ -53,6 +51,27 @@ margin-top:20px;
 color:white;
 }
 
+/* PEMBAYARAN */
+
+.payment{
+background:white;
+padding:15px;
+margin-top:20px;
+border-radius:10px;
+}
+
+.payment h3{
+margin-top:0;
+}
+
+.payment select{
+width:100%;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+
 /* BUTTON */
 
 button{
@@ -79,7 +98,13 @@ button:hover{
 opacity:0.9;
 }
 
-</style></head><body><header><h1>Keranjang Belanja 🛒</h1></header><div class="container"><div id="cartItems"></div><div class="total" id="totalPrice"></div><button class="checkout" onclick="checkout()">
+</style></head><body><header>
+<h1>Keranjang Belanja 🛒</h1>
+</header><div class="container"><div id="cartItems"></div><div class="total" id="totalPrice"></div><!-- MENU PEMBAYARAN --><div class="payment"><h3>Pilih Metode Pembayaran</h3><select id="paymentMethod">
+<option value="Cash">Cash (Bayar di tempat)</option>
+<option value="QRIS">QRIS</option>
+<option value="Transfer Bank">Transfer Bank</option>
+</select></div><button class="checkout" onclick="checkout()">
 Checkout WhatsApp
 </button><button class="clear" onclick="clearCart()">
 Hapus Keranjang
@@ -103,7 +128,10 @@ total += item.price;
 document.getElementById("totalPrice").innerText =
 "Total: Rp"+total;
 
+
 function checkout(){
+
+let payment = document.getElementById("paymentMethod").value;
 
 let text = "Halo saya mau pesan:%0A";
 
@@ -113,11 +141,14 @@ text += "- "+item.name+" Rp"+item.price+"%0A";
 
 text += "%0ATotal Rp"+total;
 
+text += "%0AMetode Pembayaran: "+payment;
+
 window.open(
 "https://wa.me/62881024784926?text="+text
 );
 
 }
+
 
 function clearCart(){
 
@@ -127,4 +158,5 @@ location.reload();
 
 }
 
-</script></body></html>
+</script></body>
+</html>
