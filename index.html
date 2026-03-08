@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hey Matcha</title>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background:#f4f8f3;
+background:#f6f6f6;
 }
 
 header{
-background:#2e7d32;
-color:white;
-text-align:center;
-padding:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#2e7d32;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
 }
 
 .hero{
-height:60vh;
-background:#1b5e20;
+height:80vh;
+background:url('hero.jpg') center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -36,42 +46,51 @@ color:white;
 text-align:center;
 }
 
+.hero h1{
+font-size:50px;
+}
+
 .hero button{
-padding:12px 25px;
-background:#ff5722;
+padding:15px 30px;
+background:#2e7d32;
 border:none;
-border-radius:6px;
 color:white;
+font-size:18px;
+border-radius:6px;
 cursor:pointer;
 }
 
-.container{
-padding:25px;
+.section{
+padding:60px 40px;
+text-align:center;
 }
 
 .menu{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+gap:30px;
 }
 
 .card{
 background:white;
 border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
-text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
 .card img{
 width:100%;
 height:200px;
 object-fit:cover;
+}
+
+.card h3{
+margin:10px;
 }
 
 .price{
@@ -83,63 +102,22 @@ button{
 background:#2e7d32;
 color:white;
 border:none;
-padding:10px;
-margin:5px;
+padding:10px 20px;
 border-radius:6px;
 cursor:pointer;
 }
 
-.gofood{
-background:#ff5722;
-}
-
-.cart{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#2e7d32;
+.promo{
+background:#1b5e20;
 color:white;
-padding:15px;
-border-radius:10px;
+padding:60px;
 }
 
-.section{
-padding:40px;
+.footer{
+background:#333;
+color:white;
 text-align:center;
-}
-
-#promo{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-.promo-box{
-background:white;
 padding:30px;
-border-radius:10px;
-text-align:center;
-}
-
-.login{
-background:white;
-padding:20px;
-max-width:300px;
-margin:auto;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-input{
-width:90%;
-padding:10px;
-margin:5px;
 }
 
 </style>
@@ -149,83 +127,71 @@ margin:5px;
 
 <header>
 
-<h1>Hey Matcha 🍵</h1>
-<p>Premium Matcha Drink</p>
+<div class="logo">Hey Matcha 🍵</div>
 
-<button class="gofood" onclick="gofood()">Order via GoFood</button>
-
-<button onclick="openMap()">Lokasi Toko</button>
+<nav>
+<a href="#">Menu</a>
+<a href="#">Promo</a>
+<a href="#">Lokasi</a>
+<a href="#">Order</a>
+</nav>
 
 </header>
 
 <div class="hero">
 
 <h1>Fresh Japanese Matcha</h1>
-<p>Minuman matcha terbaik</p>
+<p>Minuman matcha premium</p>
 
-<button onclick="scrollMenu()">Lihat Menu</button>
-
-</div>
-
-<div class="container">
-
-<h2>Menu</h2>
-
-<div class="menu">
-
-<div class="card" data-aos="zoom-in">
-<img src="1.png">
-<h3>Signature Matcha</h3>
-<p class="price">Rp12000</p>
-<button onclick="addCart('Signature Matcha',12000)">Tambah</button>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<img src="2.png">
-<h3>Caramelo Matcha</h3>
-<p class="price">Rp14000</p>
-<button onclick="addCart('Caramelo Matcha',14000)">Tambah</button>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<img src="3.png">
-<h3>Cookies Matcha</h3>
-<p class="price">Rp14000</p>
-<button onclick="addCart('Cookies Matcha',14000)">Tambah</button>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<img src="4.png">
-<h3>Yoghurt Matcha</h3>
-<p class="price">Rp16000</p>
-<button onclick="addCart('Yoghurt Matcha',16000)">Tambah</button>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<img src="5.png">
-<h3>Lemonade Matcha</h3>
-<p class="price">Rp12000</p>
-<button onclick="addCart('Lemonade Matcha',12000)">Tambah</button>
-</div>
-
-</div>
-</div>
-
-<div class="cart">
-
-Keranjang: <span id="jumlah">0</span>
-
-<br><br>
-
-<button onclick="checkout()">Checkout</button>
+<button onclick="orderGoFood()">Order Sekarang</button>
 
 </div>
 
 <div class="section">
 
-<h2>Bayar QRIS</h2>
+<h2>Menu Favorit</h2>
 
-<img src="qris.png" width="200">
+<div class="menu">
+
+<div class="card">
+<img src="1.png">
+<h3>Signature Matcha</h3>
+<p class="price">Rp12000</p>
+<button onclick="orderWA('Signature Matcha')">Order</button>
+</div>
+
+<div class="card">
+<img src="2.png">
+<h3>Caramelo Matcha</h3>
+<p class="price">Rp14000</p>
+<button onclick="orderWA('Caramelo Matcha')">Order</button>
+</div>
+
+<div class="card">
+<img src="3.png">
+<h3>Cookies Matcha</h3>
+<p class="price">Rp14000</p>
+<button onclick="orderWA('Cookies Matcha')">Order</button>
+</div>
+
+<div class="card">
+<img src="4.png">
+<h3>Yoghurt Matcha</h3>
+<p class="price">Rp16000</p>
+<button onclick="orderWA('Yoghurt Matcha')">Order</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="promo">
+
+<h2>Promo Hari Ini</h2>
+
+<p>Diskon 10% Signature Matcha</p>
+
+<button onclick="orderGoFood()">Order Sekarang</button>
 
 </div>
 
@@ -237,83 +203,23 @@ Keranjang: <span id="jumlah">0</span>
 
 </div>
 
-<div class="section">
+<div class="footer">
 
-<h2>Dashboard Penjualan</h2>
-
-<canvas id="chart"></canvas>
+<p>© 2026 Hey Matcha</p>
 
 </div>
-
-<div class="section">
-
-<h2>Admin Login</h2>
-
-<div class="login">
-
-<input id="user" placeholder="username">
-
-<input id="pass" type="password" placeholder="password">
-
-<button onclick="login()">Login</button>
-
-</div>
-
-</div>
-
-<div id="promo">
-
-<div class="promo-box">
-
-<h2>Promo Hari Ini 🍵</h2>
-
-<p>Diskon 10% Signature Matcha</p>
-
-<button onclick="closePromo()">Tutup</button>
-
-</div>
-
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
 
-AOS.init();
+function orderWA(menu){
 
-let cart=[];
-
-function addCart(nama,harga){
-
-cart.push({nama,harga});
-
-document.getElementById("jumlah").innerText=cart.length;
-
-}
-
-function checkout(){
-
-if(cart.length==0){
-alert("Keranjang kosong");
-return;
-}
-
-let pesan="Halo Hey Matcha 🍵%0A%0ASaya pesan:%0A";
-
-let total=0;
-
-cart.forEach(item=>{
-pesan+=item.nama+"%0A";
-total+=item.harga;
-});
-
-pesan+="%0ATotal: Rp"+total;
+let pesan="Halo saya mau pesan "+menu;
 
 window.open("https://wa.me/62881024784926?text="+pesan);
 
 }
 
-function gofood(){
+function orderGoFood(){
 
 window.open("https://gofood.link/a/SStZqes");
 
@@ -325,42 +231,7 @@ window.open("https://maps.app.goo.gl/2bTewL3PCXvLfiDo6");
 
 }
 
-function closePromo(){
-document.getElementById("promo").style.display="none";
-}
-
-function scrollMenu(){
-window.scrollTo({top:500,behavior:"smooth"});
-}
-
-function login(){
-
-let u=document.getElementById("user").value;
-let p=document.getElementById("pass").value;
-
-if(u=="admin" && p=="matcha123"){
-alert("Login berhasil");
-}else{
-alert("Login gagal");
-}
-
-}
-
-const ctx=document.getElementById("chart");
-
-new Chart(ctx,{
-type:'bar',
-data:{
-labels:["Signature","Caramelo","Cookies"],
-datasets:[{
-label:"Penjualan",
-data:[10,6,4]
-}]
-}
-});
-
 </script>
 
 </body>
-
 </html>
