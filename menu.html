@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu Hey Matcha</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f8f3;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+overflow:hidden;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.price{
+color:#2e7d32;
+font-weight:bold;
+}
+
+button{
+background:#2e7d32;
+color:white;
+border:none;
+padding:10px;
+margin:5px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.gofood{
+background:#ff5722;
+}
+
+.back{
+display:block;
+margin:20px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Menu Hey Matcha 🍵</h1>
+
+<p>Pilih minuman favorit kamu</p>
+
+</header>
+
+<div class="menu">
+
+<div class="card">
+
+<img src="1.png">
+
+<h3>Signature Matcha</h3>
+
+<p class="price">Rp12.000</p>
+
+<button onclick="orderWA('Signature Matcha')">
+Pesan WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+GoFood
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="2.png">
+
+<h3>Caramelo Matcha</h3>
+
+<p class="price">Rp14.000</p>
+
+<button onclick="orderWA('Caramelo Matcha')">
+Pesan WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+GoFood
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="3.png">
+
+<h3>Cookies Matcha</h3>
+
+<p class="price">Rp14.000</p>
+
+<button onclick="orderWA('Cookies Matcha')">
+Pesan WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+GoFood
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="4.png">
+
+<h3>Yoghurt Matcha</h3>
+
+<p class="price">Rp16.000</p>
+
+<button onclick="orderWA('Yoghurt Matcha')">
+Pesan WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+GoFood
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="5.png">
+
+<h3>Lemonade Matcha</h3>
+
+<p class="price">Rp12.000</p>
+
+<button onclick="orderWA('Lemonade Matcha')">
+Pesan WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+GoFood
+</button>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<a href="index.html">⬅ Kembali ke Home</a>
+
+</div>
+
+<script>
+
+function orderWA(menu){
+
+let pesan="Halo saya mau pesan "+menu;
+
+window.open("https://wa.me/62881024784926?text="+pesan);
+
+}
+
+function orderGoFood(){
+
+window.open("https://gofood.link/a/SStZqes");
+
+}
+
+</script>
+
+</body>
+
+</html>
