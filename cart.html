@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Keranjang Hey Matcha</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f8f3;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.item{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.total{
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.checkout{
+background:#25D366;
+color:white;
+}
+
+.clear{
+background:#f44336;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Keranjang Belanja 🛒</h1>
+
+</header>
+
+<div class="container">
+
+<div id="cartItems"></div>
+
+<div class="total" id="totalPrice"></div>
+
+<button class="checkout" onclick="checkout()">
+Checkout WhatsApp
+</button>
+
+<button class="clear" onclick="clearCart()">
+Hapus Keranjang
+</button>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let cartDiv = document.getElementById("cartItems");
+
+let total = 0;
+
+cart.forEach(item => {
+
+cartDiv.innerHTML +=
+"<div class='item'>"+item.name+" - Rp"+item.price+"</div>";
+
+total += item.price;
+
+});
+
+document.getElementById("totalPrice").innerText =
+"Total: Rp"+total;
+
+function checkout(){
+
+let text = "Halo saya mau pesan:%0A";
+
+cart.forEach(item=>{
+text += "- "+item.name+" Rp"+item.price+"%0A";
+});
+
+text += "%0ATotal Rp"+total;
+
+window.open(
+"https://wa.me/62881024784926?text="+text
+);
+
+}
+
+function clearCart(){
+
+localStorage.removeItem("cart");
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+
+</html>
