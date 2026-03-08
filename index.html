@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hey Matcha</title>
+
+<title>Hey Matcha Kemayoran</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background:#f6f6f6;
+background:#f4f8f3;
+color:#333;
 }
 
 header{
@@ -35,62 +39,75 @@ color:#333;
 font-weight:bold;
 }
 
+nav a:hover{
+color:#2e7d32;
+}
+
 .hero{
 height:80vh;
-background:url('hero.jpg') center/cover;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-color:white;
+justify-content:center;
+flex-direction:column;
 text-align:center;
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1627998792088-1e0c6a7e8a6c');
+background-size:cover;
+color:white;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
+margin:0;
 }
 
-.hero button{
-padding:15px 30px;
-background:#2e7d32;
+.hero p{
+font-size:20px;
+margin:10px 0 30px;
+}
+
+.btn{
+padding:12px 25px;
 border:none;
-color:white;
-font-size:18px;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
+font-size:16px;
+margin:5px;
 }
 
-.section{
-padding:60px 40px;
+.order{
+background:#25D366;
+color:white;
+}
+
+.gofood{
+background:#ff5722;
+color:white;
+}
+
+.menu-section{
+padding:60px 20px;
 text-align:center;
 }
 
-.menu{
+.menu-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
 }
 
 .card{
 background:white;
+padding:15px;
 border-radius:12px;
-overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .card img{
 width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.card h3{
-margin:10px;
+border-radius:10px;
 }
 
 .price{
@@ -98,140 +115,142 @@ color:#2e7d32;
 font-weight:bold;
 }
 
-button{
+footer{
 background:#2e7d32;
 color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
-}
-
-.promo{
-background:#1b5e20;
-color:white;
-padding:60px;
-}
-
-.footer{
-background:#333;
-color:white;
 text-align:center;
-padding:30px;
+padding:20px;
+margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">Hey Matcha 🍵</div>
+<div class="logo">
+Hey Matcha 🍵
+</div>
 
 <nav>
+
 <a href="menu.html">Menu</a>
-<a href="#promo">Promo</a>
-<a href="#lokasi">Lokasi</a>
-<a href="order.html">Order</a>
+
+<a href="menu.html">Promo</a>
+
+<a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">
+Lokasi
+</a>
+
+<a href="order.html">
+Order
+</a>
+
 </nav>
 
 </header>
 
-<div class="hero">
+<section class="hero">
 
-<h1>Fresh Japanese Matcha</h1>
-<p>Minuman matcha premium</p>
+<h1>Fresh Matcha Everyday</h1>
 
-<button onclick="orderGoFood()">Order Sekarang</button>
+<p>Matcha kekinian favorit Kemayoran</p>
 
-</div>
+<button class="btn order"
+onclick="orderWA()">
+Order WhatsApp
+</button>
 
-<div class="section">
+<button class="btn gofood"
+onclick="gofood()">
+Order GoFood
+</button>
+
+</section>
+
+<section class="menu-section">
 
 <h2>Menu Favorit</h2>
 
-<div class="menu">
+<br>
+
+<div class="menu-grid">
 
 <div class="card">
+
 <img src="1.png">
+
 <h3>Signature Matcha</h3>
-<p class="price">Rp12000</p>
-<button onclick="orderWA('Signature Matcha')">Order</button>
+
+<p class="price">Rp12.000</p>
+
 </div>
 
 <div class="card">
+
 <img src="2.png">
+
 <h3>Caramelo Matcha</h3>
-<p class="price">Rp14000</p>
-<button onclick="orderWA('Caramelo Matcha')">Order</button>
+
+<p class="price">Rp14.000</p>
+
 </div>
 
 <div class="card">
+
 <img src="3.png">
+
 <h3>Cookies Matcha</h3>
-<p class="price">Rp14000</p>
-<button onclick="orderWA('Cookies Matcha')">Order</button>
-</div>
 
-<div class="card">
-<img src="4.png">
-<h3>Yoghurt Matcha</h3>
-<p class="price">Rp16000</p>
-<button onclick="orderWA('Yoghurt Matcha')">Order</button>
-</div>
+<p class="price">Rp14.000</p>
 
 </div>
 
 </div>
 
-<div class="promo">
+<br>
 
-<h2>Promo Hari Ini</h2>
+<a href="menu.html">
 
-<p>Diskon 10% Signature Matcha</p>
+<button class="btn order">
+Lihat Semua Menu
+</button>
 
-<button onclick="orderGoFood()">Order Sekarang</button>
+</a>
 
-</div>
+</section>
 
-<div class="section">
+<footer>
 
-<h2>Lokasi Toko</h2>
+<p>Hey Matcha Kemayoran</p>
 
-<button onclick="openMap()">Buka Google Maps</button>
+<p>Order cepat via WhatsApp atau GoFood</p>
 
-</div>
-
-<div class="footer">
-
-<p>© 2026 Hey Matcha</p>
-
-</div>
+</footer>
 
 <script>
 
-function orderWA(menu){
+function orderWA(){
 
-let pesan="Halo saya mau pesan "+menu;
+let pesan="Halo saya mau pesan Hey Matcha"
 
-window.open("https://wa.me/62881024784926?text="+pesan);
-
-}
-
-function orderGoFood(){
-
-window.open("https://gofood.link/a/SStZqes");
+window.open(
+"https://wa.me/62881024784926?text="+encodeURIComponent(pesan)
+)
 
 }
 
-function openMap(){
+function gofood(){
 
-window.open("https://maps.app.goo.gl/2bTewL3PCXvLfiDo6");
+window.open("https://gofood.link/a/SStZqes")
 
 }
 
 </script>
 
 </body>
+
 </html>
