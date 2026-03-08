@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Keranjang Hey Matcha</title>
-
-<style>
+<!DOCTYPE html><html lang="id">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Keranjang Hey Matcha</title><style>
 
 body{
 font-family:Arial;
@@ -71,6 +64,13 @@ box-shadow:0 3px 10px rgba(0,0,0,0.2);
 text-align:center;
 }
 
+.qris-img{
+width:220px;
+margin-top:10px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
 /* BUTTON */
 
 button{
@@ -97,46 +97,13 @@ button:hover{
 opacity:0.9;
 }
 
-</style>
-
-</head>
-
-<body>
-
-<header>
+</style></head><body><header>
 <h1>Keranjang Belanja 🛒</h1>
-</header>
-
-<div class="container">
-
-<div id="cartItems"></div>
-
-<div class="total" id="totalPrice"></div>
-
-<!-- PEMBAYARAN -->
-<div class="payment">
-
-<h3>Pembayaran Transfer</h3>
-
-<p><b>Bank BRI</b></p>
-
-<p style="font-size:20px;"><b>043401047255504</b></p>
-
-<p>Silakan transfer sesuai total pesanan</p>
-
-</div>
-
-<button class="checkout" onclick="checkout()">
-Saya Sudah Transfer → Kirim ke WhatsApp
-</button>
-
-<button class="clear" onclick="clearCart()">
+</header><div class="container"><div id="cartItems"></div><div class="total" id="totalPrice"></div><!-- PEMBAYARAN TRANSFER --><div class="payment"><h3>Pembayaran Transfer</h3><p><b>Bank BCA</b></p><p style="font-size:20px;"><b>8771003648</b></p><p>a.n <b>ADITYA SURYA PRAWIRA MULYA</b></p><p>Silakan transfer sesuai total pesanan</p></div><!-- PEMBAYARAN QRIS --><div class="payment"><h3>Atau Bayar via QRIS</h3><p>Scan QR di bawah ini</p><img src="qris.png" class="qris-img"></div><button class="checkout" onclick="checkout()">
+Saya Sudah Bayar → Kirim ke WhatsApp
+</button><button class="clear" onclick="clearCart()">
 Hapus Keranjang
-</button>
-
-</div>
-
-<script>
+</button></div><script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -158,13 +125,13 @@ document.getElementById("totalPrice").innerText =
 
 function checkout(){
 
-let text = "Halo saya sudah transfer.%0A%0APesanan:%0A";
+let text = "Halo saya sudah melakukan pembayaran.%0A%0APesanan:%0A";
 
 cart.forEach(item=>{
 text += "- "+item.name+" Rp"+item.price+"%0A";
 });
 
-text += "%0ATotal Rp"+total+"%0A%0ABukti transfer akan saya kirim.";
+text += "%0ATotal Rp"+total+"%0A%0ABukti pembayaran akan saya kirim.";
 
 window.open(
 "https://wa.me/62881024784926?text="+text
@@ -180,7 +147,5 @@ location.reload();
 
 }
 
-</script>
-
-</body>
+</script></body>
 </html>
