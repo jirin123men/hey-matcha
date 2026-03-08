@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,7 +13,6 @@ body{
 margin:0;
 font-family:Arial;
 background:#f4f8f3;
-color:#333;
 }
 
 header{
@@ -33,14 +31,10 @@ color:#2e7d32;
 }
 
 nav a{
-margin:0 15px;
+margin:0 10px;
 text-decoration:none;
 color:#333;
 font-weight:bold;
-}
-
-nav a:hover{
-color:#2e7d32;
 }
 
 .hero{
@@ -61,21 +55,16 @@ font-size:48px;
 margin:0;
 }
 
-.hero p{
-font-size:20px;
-margin:10px 0 30px;
-}
-
 .btn{
 padding:12px 25px;
 border:none;
 border-radius:8px;
 cursor:pointer;
-font-size:16px;
 margin:5px;
+font-size:16px;
 }
 
-.order{
+.wa{
 background:#25D366;
 color:white;
 }
@@ -85,42 +74,11 @@ background:#ff5722;
 color:white;
 }
 
-.menu-section{
-padding:60px 20px;
-text-align:center;
-}
-
-.menu-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.price{
-color:#2e7d32;
-font-weight:bold;
-}
-
 footer{
 background:#2e7d32;
 color:white;
 text-align:center;
 padding:20px;
-margin-top:40px;
 }
 
 </style>
@@ -137,16 +95,12 @@ Hey Matcha 🍵
 
 <nav>
 
+<a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
-
-<a href="menu.html">Promo</a>
+<a href="cart.html">Keranjang</a>
 
 <a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">
 Lokasi
-</a>
-
-<a href="order.html">
-Order
 </a>
 
 </nav>
@@ -159,75 +113,20 @@ Order
 
 <p>Matcha kekinian favorit Kemayoran</p>
 
-<button class="btn order"
-onclick="orderWA()">
+<button class="btn wa" onclick="orderWA()">
 Order WhatsApp
 </button>
 
-<button class="btn gofood"
-onclick="gofood()">
+<button class="btn gofood" onclick="gofood()">
 Order GoFood
 </button>
-
-</section>
-
-<section class="menu-section">
-
-<h2>Menu Favorit</h2>
-
-<br>
-
-<div class="menu-grid">
-
-<div class="card">
-
-<img src="1.png">
-
-<h3>Signature Matcha</h3>
-
-<p class="price">Rp12.000</p>
-
-</div>
-
-<div class="card">
-
-<img src="2.png">
-
-<h3>Caramelo Matcha</h3>
-
-<p class="price">Rp14.000</p>
-
-</div>
-
-<div class="card">
-
-<img src="3.png">
-
-<h3>Cookies Matcha</h3>
-
-<p class="price">Rp14.000</p>
-
-</div>
-
-</div>
-
-<br>
-
-<a href="menu.html">
-
-<button class="btn order">
-Lihat Semua Menu
-</button>
-
-</a>
 
 </section>
 
 <footer>
 
 <p>Hey Matcha Kemayoran</p>
-
-<p>Order cepat via WhatsApp atau GoFood</p>
+<p>Matcha minuman kekinian</p>
 
 </footer>
 
@@ -235,17 +134,17 @@ Lihat Semua Menu
 
 function orderWA(){
 
-let pesan="Halo saya mau pesan Hey Matcha"
+let pesan="Halo saya mau pesan Hey Matcha";
 
 window.open(
 "https://wa.me/62881024784926?text="+encodeURIComponent(pesan)
-)
+);
 
 }
 
 function gofood(){
 
-window.open("https://gofood.link/a/SStZqes")
+window.open("https://gofood.link/a/SStZqes");
 
 }
 
