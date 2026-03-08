@@ -35,11 +35,13 @@ top:0;
 z-index:1000;
 }
 
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#2e7d32;
+/* LOGO */
+
+.logo img{
+height:50px;
 }
+
+/* NAV */
 
 nav a{
 margin:0 12px;
@@ -55,12 +57,13 @@ color:#2e7d32;
 /* TITLE */
 
 .title{
-margin-top:100px;
+margin-top:110px;
 text-align:center;
 }
 
 .title h1{
 color:#2e7d32;
+margin-bottom:5px;
 }
 
 /* MENU GRID */
@@ -74,6 +77,8 @@ max-width:1100px;
 margin:auto;
 }
 
+/* CARD */
+
 .card{
 background:white;
 border-radius:12px;
@@ -84,7 +89,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
 .card img{
@@ -107,7 +112,7 @@ margin-bottom:10px;
 
 button{
 border:none;
-padding:10px 15px;
+padding:10px 14px;
 margin:5px;
 border-radius:6px;
 cursor:pointer;
@@ -139,6 +144,20 @@ padding:25px;
 margin-top:40px;
 }
 
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
+}
+
 </style>
 
 </head>
@@ -148,7 +167,7 @@ margin-top:40px;
 <header>
 
 <div class="logo">
-Hey Matcha 🍵
+<img src="logo.jpg" alt="Hey Matcha Logo">
 </div>
 
 <nav>
@@ -192,7 +211,6 @@ GoFood
 </button>
 </div>
 
-
 <div class="card">
 <img src="2.png">
 <h3>Caramelo Matcha</h3>
@@ -210,7 +228,6 @@ WhatsApp
 GoFood
 </button>
 </div>
-
 
 <div class="card">
 <img src="3.png">
@@ -230,7 +247,6 @@ GoFood
 </button>
 </div>
 
-
 <div class="card">
 <img src="4.png">
 <h3>Yoghurt Matcha</h3>
@@ -248,7 +264,6 @@ WhatsApp
 GoFood
 </button>
 </div>
-
 
 <div class="card">
 <img src="5.png">
@@ -310,5 +325,4 @@ window.open("https://gofood.link/a/SStZqes");
 </script>
 
 </body>
-
 </html>
