@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -31,26 +32,22 @@ color:#2e7d32;
 }
 
 nav a{
-margin:0 15px;
+margin:0 10px;
 text-decoration:none;
 color:#333;
 font-weight:bold;
 }
 
-nav a:hover{
-color:#2e7d32;
-}
-
 .title{
 text-align:center;
-padding:40px 20px;
+padding:40px;
 }
 
 .menu-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:30px;
+gap:20px;
+padding:20px;
 max-width:1100px;
 margin:auto;
 }
@@ -61,11 +58,6 @@ border-radius:12px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
 text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 .card img{
@@ -87,22 +79,14 @@ border-radius:6px;
 cursor:pointer;
 }
 
-.order{
-background:#25D366;
+.cart{
+background:#2e7d32;
 color:white;
 }
 
 .gofood{
 background:#ff5722;
 color:white;
-}
-
-footer{
-background:#2e7d32;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
 }
 
 </style>
@@ -121,13 +105,10 @@ Hey Matcha 🍵
 
 <a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
+<a href="cart.html">Keranjang</a>
 
 <a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">
 Lokasi
-</a>
-
-<a href="order.html">
-Order
 </a>
 
 </nav>
@@ -138,7 +119,7 @@ Order
 
 <h1>Menu Hey Matcha</h1>
 
-<p>Pilih minuman matcha favorit kamu</p>
+<p>Pilih minuman favorit kamu</p>
 
 </div>
 
@@ -152,9 +133,9 @@ Order
 
 <p class="price">Rp12.000</p>
 
-<a href="order.html?menu=Signature Matcha&price=12000">
-<button class="order">Pesan</button>
-</a>
+<button class="cart" onclick="addToCart('Signature Matcha',12000)">
+Tambah ke Keranjang
+</button>
 
 <button class="gofood" onclick="gofood()">
 GoFood
@@ -171,9 +152,9 @@ GoFood
 
 <p class="price">Rp14.000</p>
 
-<a href="order.html?menu=Caramelo Matcha&price=14000">
-<button class="order">Pesan</button>
-</a>
+<button class="cart" onclick="addToCart('Caramelo Matcha',14000)">
+Tambah ke Keranjang
+</button>
 
 <button class="gofood" onclick="gofood()">
 GoFood
@@ -190,9 +171,9 @@ GoFood
 
 <p class="price">Rp14.000</p>
 
-<a href="order.html?menu=Cookies Matcha&price=14000">
-<button class="order">Pesan</button>
-</a>
+<button class="cart" onclick="addToCart('Cookies Matcha',14000)">
+Tambah ke Keranjang
+</button>
 
 <button class="gofood" onclick="gofood()">
 GoFood
@@ -209,9 +190,9 @@ GoFood
 
 <p class="price">Rp16.000</p>
 
-<a href="order.html?menu=Yoghurt Matcha&price=16000">
-<button class="order">Pesan</button>
-</a>
+<button class="cart" onclick="addToCart('Yoghurt Matcha',16000)">
+Tambah ke Keranjang
+</button>
 
 <button class="gofood" onclick="gofood()">
 GoFood
@@ -228,9 +209,9 @@ GoFood
 
 <p class="price">Rp12.000</p>
 
-<a href="order.html?menu=Lemonade Matcha&price=12000">
-<button class="order">Pesan</button>
-</a>
+<button class="cart" onclick="addToCart('Lemonade Matcha',12000)">
+Tambah ke Keranjang
+</button>
 
 <button class="gofood" onclick="gofood()">
 GoFood
@@ -240,19 +221,23 @@ GoFood
 
 </div>
 
-<footer>
-
-<p>Hey Matcha Kemayoran</p>
-
-<p>Order via WhatsApp atau GoFood</p>
-
-</footer>
-
 <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name,price){
+
+cart.push({name,price});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert(name+" ditambahkan ke keranjang 🛒");
+
+}
 
 function gofood(){
 
-window.open("https://gofood.link/a/SStZqes")
+window.open("https://gofood.link/a/SStZqes");
 
 }
 
