@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Hey Matcha</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f8f3;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+padding:30px;
+max-width:600px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.price{
+color:#2e7d32;
+font-weight:bold;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin-top:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+.wa{
+background:#25D366;
+color:white;
+}
+
+.gofood{
+background:#ff5722;
+color:white;
+}
+
+.back{
+display:block;
+text-align:center;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Order Hey Matcha 🍵</h1>
+<p>Konfirmasi pesanan kamu</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h3 id="menuName">Menu</h3>
+<p class="price" id="menuPrice">Harga</p>
+</div>
+
+<button class="wa" onclick="orderWA()">
+Checkout WhatsApp
+</button>
+
+<button class="gofood" onclick="orderGoFood()">
+Order via GoFood
+</button>
+
+<a class="back" href="menu.html">⬅ Kembali ke Menu</a>
+
+</div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search)
+
+let menu = params.get("menu")
+let price = params.get("price")
+
+document.getElementById("menuName").innerText = menu
+document.getElementById("menuPrice").innerText = "Rp"+price
+
+function orderWA(){
+
+let pesan = "Halo saya mau pesan "+menu+" Rp"+price
+
+window.open("https://wa.me/62881024784926?text="+encodeURIComponent(pesan))
+
+}
+
+function orderGoFood(){
+
+window.open("https://gofood.link/a/SStZqes")
+
+}
+
+</script>
+
+</body>
+</html>
