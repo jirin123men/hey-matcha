@@ -1,7 +1,13 @@
-<!DOCTYPE html><html lang="id"><head>
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hey Matcha Kemayoran</title><style>
+<title>Hey Matcha Kemayoran</title>
+
+<style>
 
 *{
 box-sizing:border-box;
@@ -96,7 +102,6 @@ color:white;
 background:#fff8e1;
 padding:40px 20px;
 text-align:center;
-margin-top:0;
 }
 
 .promo h2{
@@ -106,6 +111,56 @@ color:#e65100;
 .promo a{
 display:inline-block;
 margin-top:15px;
+padding:12px 20px;
+background:#ff5722;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* POPUP PROMO */
+
+#promoPopup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.promo-box{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+max-width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+position:relative;
+}
+
+.promo-box img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:15px;
+font-size:24px;
+cursor:pointer;
+}
+
+.promo-btn{
+display:inline-block;
+margin-top:10px;
 padding:12px 20px;
 background:#ff5722;
 color:white;
@@ -200,32 +255,101 @@ font-size:32px;
 
 }
 
-</style></head><body><header><div class="logo">
+</style>
+
+</head>
+
+<body>
+
+<!-- POPUP PROMO -->
+
+<div id="promoPopup">
+
+<div class="promo-box">
+
+<div class="close-btn" onclick="closePromo()">✕</div>
+
+<img src="promo.jpg" alt="Promo Hey Matcha">
+
+<h2>🔥 PROMO SPESIAL</h2>
+
+<p><b>Beli 1 Yoghurt Matcha</b></p>
+<p>Gratis <b>1 Signature Matcha</b></p>
+
+<p>10 Maret – 21 Maret 2026</p>
+
+<a class="promo-btn" href="https://gofood.link/a/STAdXU5" target="_blank">
+Ambil Promo
+</a>
+
+</div>
+</div>
+
+<header>
+
+<div class="logo">
 <img src="logo.jpg" alt="Hey Matcha Logo">
-</div><nav>
+</div>
+
+<nav>
 <a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
 <a href="cart.html">Keranjang</a>
 <a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">Lokasi</a>
-</nav></header><!-- HERO --><section class="hero"><h1>Fresh Matcha Everyday</h1>
-<p>Matcha kekinian favorit Kemayoran</p><button class="wa" onclick="orderWA()">Order WhatsApp</button>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Fresh Matcha Everyday</h1>
+
+<p>Matcha kekinian favorit Kemayoran</p>
+
+<button class="wa" onclick="orderWA()">Order WhatsApp</button>
+
 <button class="gofood" onclick="gofood()">Order GoFood</button>
 
-</section><!-- PROMO --><section class="promo"><h2>🔥 PROMO SPESIAL</h2><p><b>Beli 1 Yoghurt Matcha</b> gratis <b>1 Signature Matcha</b></p><p>Berlaku 10 Maret 2026 – 21 Maret 2026</p><a href="https://gofood.link/a/STAdXU5" target="_blank">
+</section>
+
+<!-- PROMO SECTION -->
+
+<section class="promo">
+
+<h2>🔥 PROMO SPESIAL</h2>
+
+<p><b>Beli 1 Yoghurt Matcha</b> gratis <b>1 Signature Matcha</b></p>
+
+<p>Berlaku 10 Maret 2026 – 21 Maret 2026</p>
+
+<a href="https://gofood.link/a/STAdXU5" target="_blank">
 Ambil Promo di GoFood
-</a></style></head><body><!-- POPUP PROMO --><div id="promoPopup"><div class="promo-box"><div class="close-btn" onclick="closePromo()">✕</div><img src="promo.jpg" alt="Promo Hey Matcha"><h2>🔥 PROMO SPESIAL</h2><p><b>Beli 1 Yoghurt Matcha</b></p>
-<p>Gratis <b>1 Signature Matcha</b></p><p>10 Maret – 21 Maret 2026</p><a class="promo-btn" href="https://gofood.link/a/STAdXU5" target="_blank">
-Ambil Promo
-</a></div></section><!-- INFO MATCHA --><section class="matcha"><h2>Apa Itu Matcha?</h2><p>
+</a>
+
+</section>
+
+<!-- INFO MATCHA -->
+
+<section class="matcha">
+
+<h2>Apa Itu Matcha?</h2>
+
+<p>
 Matcha adalah bubuk teh hijau premium dari Jepang.
-Daun teh digiling sangat halus sehingga seluruh daun dikonsumsi.Matcha memiliki warna hijau cerah, rasa khas, dan kaya antioksidan.
-Minuman ini membantu meningkatkan energi, fokus, dan metabolisme tubuh.
+Daun teh digiling sangat halus sehingga seluruh daun dikonsumsi.
+Matcha memiliki warna hijau cerah, rasa khas, dan kaya antioksidan.
 
 Di Hey Matcha Kemayoran kami menggunakan matcha berkualitas
 yang dipadukan dengan resep minuman kekinian sehingga rasanya creamy,
 segar, dan cocok dinikmati setiap hari.
 
-</p><div class="gallery"><img src="11.jpg">
+</p>
+
+<div class="gallery">
+
+<img src="11.jpg">
 <img src="12.jpg">
 <img src="13.jpg">
 <img src="14.jpg">
@@ -236,13 +360,44 @@ segar, dan cocok dinikmati setiap hari.
 <img src="19.jpg">
 <img src="20.jpg">
 <img src="21.jpg">
-<img src="22.jpg"></div></section><!-- FOTO PELANGGAN --><section class="customer"><h2>Pelanggan Hey Matcha</h2><div class="customer-gallery"><img src="p1.jpg">
+<img src="22.jpg">
+
+</div>
+
+</section>
+
+<!-- FOTO PELANGGAN -->
+
+<section class="customer">
+
+<h2>Pelanggan Hey Matcha</h2>
+
+<div class="customer-gallery">
+
+<img src="p1.jpg">
 <img src="p2.jpg">
 <img src="p3.jpg">
 <img src="p4.jpg">
 <img src="p5.jpg">
-<img src="p6.jpg"></div></section><!-- FOOTER --><footer><p>Hey Matcha Kemayoran</p>
-<p>Minuman Matcha Segar Setiap Hari 🍵</p></footer><script>
+<img src="p6.jpg">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Hey Matcha Kemayoran</p>
+
+<p>Minuman Matcha Segar Setiap Hari 🍵</p>
+
+</footer>
+
+<script>
+
+function closePromo(){
+document.getElementById("promoPopup").style.display="none";
+}
 
 function orderWA(){
 
@@ -260,5 +415,7 @@ window.open("https://gofood.link/a/SStZqes");
 
 }
 
-</script></body>
+</script>
+
+</body>
 </html>
