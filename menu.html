@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="id"><head>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Menu Hey Matcha</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Hey Matcha</title>
+
+<style>
 
 *{
 box-sizing:border-box;
@@ -9,7 +15,14 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f5;
+
+/* BACKGROUND FOTO */
+
+background-image:url("bg.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
 }
 
 /* HEADER */
@@ -18,7 +31,7 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 30px;
+padding:10px 30px;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 position:fixed;
@@ -30,10 +43,15 @@ z-index:1000;
 /* LOGO */
 
 .logo img{
-height:120px;
+height:110px;
 }
 
-/* NAVIGATION */
+/* NAV */
+
+nav{
+display:flex;
+align-items:center;
+}
 
 nav a{
 margin:0 12px;
@@ -51,10 +69,10 @@ color:#2e7d32;
 .title{
 margin-top:160px;
 text-align:center;
+color:#1b5e20;
 }
 
 .title h1{
-color:#2e7d32;
 margin-bottom:5px;
 }
 
@@ -72,7 +90,7 @@ margin:auto;
 /* CARD */
 
 .card{
-background:white;
+background:rgba(255,255,255,0.95);
 border-radius:12px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
@@ -136,7 +154,7 @@ padding:25px;
 margin-top:40px;
 }
 
-/* TOAST NOTIFICATION */
+/* TOAST */
 
 #toast{
 position:fixed;
@@ -177,55 +195,141 @@ margin-top:10px;
 
 }
 
-</style></head><body><header><div class="logo">
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
 <img src="logo.jpg" alt="Hey Matcha Logo">
-</div><nav>
+</div>
+
+<nav>
 <a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
 <a href="cart.html">Keranjang</a>
 <a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">Lokasi</a>
-</nav></header><div class="title">
+</nav>
+
+</header>
+
+
+<div class="title">
 <h1>Menu Hey Matcha</h1>
 <p>Pilih minuman matcha favorit kamu</p>
-</div><div class="menu"><div class="card">
+</div>
+
+
+<div class="menu">
+
+<div class="card">
 <img src="1.png">
 <h3>Signature Matcha</h3>
-<p class="price">Rp12.000</p><button class="cart" onclick="addToCart('Signature Matcha',12000)">Tambah Keranjang</button>
-<button class="wa" onclick="orderWA('Signature Matcha')">WhatsApp</button>
-<button class="gofood" onclick="gofood()">GoFood</button>
+<p class="price">Rp12.000</p>
 
-</div><div class="card">
+<button class="cart" onclick="addToCart('Signature Matcha',12000)">
+Tambah Keranjang
+</button>
+
+<button class="wa" onclick="orderWA('Signature Matcha')">
+WhatsApp
+</button>
+
+<button class="gofood" onclick="gofood()">
+GoFood
+</button>
+</div>
+
+
+<div class="card">
 <img src="2.png">
 <h3>Caramelo Matcha</h3>
-<p class="price">Rp14.000</p><button class="cart" onclick="addToCart('Caramelo Matcha',14000)">Tambah Keranjang</button>
-<button class="wa" onclick="orderWA('Caramelo Matcha')">WhatsApp</button>
-<button class="gofood" onclick="gofood()">GoFood</button>
+<p class="price">Rp14.000</p>
 
-</div><div class="card">
+<button class="cart" onclick="addToCart('Caramelo Matcha',14000)">
+Tambah Keranjang
+</button>
+
+<button class="wa" onclick="orderWA('Caramelo Matcha')">
+WhatsApp
+</button>
+
+<button class="gofood" onclick="gofood()">
+GoFood
+</button>
+</div>
+
+
+<div class="card">
 <img src="3.png">
 <h3>Cookies Matcha</h3>
-<p class="price">Rp14.000</p><button class="cart" onclick="addToCart('Cookies Matcha',14000)">Tambah Keranjang</button>
-<button class="wa" onclick="orderWA('Cookies Matcha')">WhatsApp</button>
-<button class="gofood" onclick="gofood()">GoFood</button>
+<p class="price">Rp14.000</p>
 
-</div><div class="card">
+<button class="cart" onclick="addToCart('Cookies Matcha',14000)">
+Tambah Keranjang
+</button>
+
+<button class="wa" onclick="orderWA('Cookies Matcha')">
+WhatsApp
+</button>
+
+<button class="gofood" onclick="gofood()">
+GoFood
+</button>
+</div>
+
+
+<div class="card">
 <img src="4.png">
 <h3>Yoghurt Matcha</h3>
-<p class="price">Rp16.000</p><button class="cart" onclick="addToCart('Yoghurt Matcha',16000)">Tambah Keranjang</button>
-<button class="wa" onclick="orderWA('Yoghurt Matcha')">WhatsApp</button>
-<button class="gofood" onclick="gofood()">GoFood</button>
+<p class="price">Rp16.000</p>
 
-</div><div class="card">
+<button class="cart" onclick="addToCart('Yoghurt Matcha',16000)">
+Tambah Keranjang
+</button>
+
+<button class="wa" onclick="orderWA('Yoghurt Matcha')">
+WhatsApp
+</button>
+
+<button class="gofood" onclick="gofood()">
+GoFood
+</button>
+</div>
+
+
+<div class="card">
 <img src="5.png">
 <h3>Lemonade Matcha</h3>
-<p class="price">Rp12.000</p><button class="cart" onclick="addToCart('Lemonade Matcha',12000)">Tambah Keranjang</button>
-<button class="wa" onclick="orderWA('Lemonade Matcha')">WhatsApp</button>
-<button class="gofood" onclick="gofood()">GoFood</button>
+<p class="price">Rp12.000</p>
 
-</div></div><footer>
+<button class="cart" onclick="addToCart('Lemonade Matcha',12000)">
+Tambah Keranjang
+</button>
+
+<button class="wa" onclick="orderWA('Lemonade Matcha')">
+WhatsApp
+</button>
+
+<button class="gofood" onclick="gofood()">
+GoFood
+</button>
+</div>
+
+</div>
+
+
+<footer>
 <p>Hey Matcha Kemayoran</p>
 <p>Matcha Minuman Kekinian 🍵</p>
-</footer><div id="toast"></div><script>
+</footer>
+
+
+<div id="toast"></div>
+
+<script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -242,7 +346,7 @@ function showToast(text){
 
 let toast = document.getElementById("toast");
 
-toast.innerText=text;
+toast.innerText = text;
 toast.classList.add("show");
 
 setTimeout(()=>{
@@ -257,6 +361,7 @@ let pesan="Halo saya mau pesan "+menu;
 
 window.open(
 "https://wa.me/62881024784926?text="+encodeURIComponent(pesan)
+
 );
 
 }
