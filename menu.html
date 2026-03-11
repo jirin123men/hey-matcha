@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
+<!DOCTYPE html><html lang="id"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Hey Matcha</title>
+<title>Menu Hey Matcha</title><style>
 
-<style>
-
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 
-/* BACKGROUND FOTO */
-
 background-image:url("bg.png");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-
 }
 
 /* HEADER */
@@ -40,13 +30,9 @@ top:0;
 z-index:1000;
 }
 
-/* LOGO */
-
 .logo img{
 height:110px;
 }
-
-/* NAV */
 
 nav{
 display:flex;
@@ -129,20 +115,9 @@ cursor:pointer;
 font-size:14px;
 }
 
-.cart{
-background:#2e7d32;
-color:white;
-}
-
-.wa{
-background:#25D366;
-color:white;
-}
-
-.gofood{
-background:#ff5722;
-color:white;
-}
+.cart{background:#2e7d32;color:white;}
+.wa{background:#25D366;color:white;}
+.gofood{background:#ff5722;color:white;}
 
 /* FOOTER */
 
@@ -177,6 +152,61 @@ opacity:1;
 bottom:50px;
 }
 
+/* PROMO POPUP */
+
+#promoPopup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.promo-box{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+max-width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+position:relative;
+}
+
+.promo-box img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.promo-box h2{
+color:#e65100;
+margin:10px 0;
+}
+
+.promo-btn{
+display:inline-block;
+margin-top:10px;
+padding:12px 20px;
+background:#ff5722;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:15px;
+font-size:24px;
+cursor:pointer;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:768px){
@@ -195,175 +225,85 @@ margin-top:10px;
 
 }
 
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-<img src="logo.jpg" alt="Hey Matcha Logo">
-</div>
-
-<nav>
+</style></head><body><!-- POPUP PROMO --><div id="promoPopup"><div class="promo-box"><div class="close-btn" onclick="closePromo()">✕</div><img src="promo.jpg" alt="Promo Hey Matcha"><h2>🔥 PROMO SPESIAL</h2><p><b>Beli 1 Yoghurt Matcha</b></p>
+<p>Gratis <b>1 Signature Matcha</b></p><p>10 Maret – 21 Maret 2026</p><a class="promo-btn" href="https://gofood.link/a/STAdXU5" target="_blank">
+Ambil Promo
+</a></div>
+</div><header><div class="logo">
+<img src="logo.jpg">
+</div><nav>
 <a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
 <a href="cart.html">Keranjang</a>
 <a href="https://maps.app.goo.gl/2bTewL3PCXvLfiDo6" target="_blank">Lokasi</a>
-</nav>
-
-</header>
-
-
-<div class="title">
+</nav></header><div class="title">
 <h1>Menu Hey Matcha</h1>
 <p>Pilih minuman matcha favorit kamu</p>
-</div>
-
-
-<div class="menu">
-
-<div class="card">
+</div><div class="menu"><div class="card">
 <img src="1.png">
 <h3>Signature Matcha</h3>
-<p class="price">Rp12.000</p>
+<p class="price">Rp12.000</p><button class="cart" onclick="addToCart('Signature Matcha',12000)">Tambah Keranjang</button>
+<button class="wa" onclick="orderWA('Signature Matcha')">WhatsApp</button>
+<button class="gofood" onclick="gofood()">GoFood</button>
 
-<button class="cart" onclick="addToCart('Signature Matcha',12000)">
-Tambah Keranjang
-</button>
-
-<button class="wa" onclick="orderWA('Signature Matcha')">
-WhatsApp
-</button>
-
-<button class="gofood" onclick="gofood()">
-GoFood
-</button>
-</div>
-
-
-<div class="card">
+</div><div class="card">
 <img src="2.png">
 <h3>Caramelo Matcha</h3>
-<p class="price">Rp14.000</p>
+<p class="price">Rp14.000</p><button class="cart" onclick="addToCart('Caramelo Matcha',14000)">Tambah Keranjang</button>
+<button class="wa" onclick="orderWA('Caramelo Matcha')">WhatsApp</button>
+<button class="gofood" onclick="gofood()">GoFood</button>
 
-<button class="cart" onclick="addToCart('Caramelo Matcha',14000)">
-Tambah Keranjang
-</button>
-
-<button class="wa" onclick="orderWA('Caramelo Matcha')">
-WhatsApp
-</button>
-
-<button class="gofood" onclick="gofood()">
-GoFood
-</button>
-</div>
-
-
-<div class="card">
+</div><div class="card">
 <img src="3.png">
 <h3>Cookies Matcha</h3>
-<p class="price">Rp14.000</p>
+<p class="price">Rp14.000</p><button class="cart" onclick="addToCart('Cookies Matcha',14000)">Tambah Keranjang</button>
+<button class="wa" onclick="orderWA('Cookies Matcha')">WhatsApp</button>
+<button class="gofood" onclick="gofood()">GoFood</button>
 
-<button class="cart" onclick="addToCart('Cookies Matcha',14000)">
-Tambah Keranjang
-</button>
-
-<button class="wa" onclick="orderWA('Cookies Matcha')">
-WhatsApp
-</button>
-
-<button class="gofood" onclick="gofood()">
-GoFood
-</button>
-</div>
-
-
-<div class="card">
+</div><div class="card">
 <img src="4.png">
 <h3>Yoghurt Matcha</h3>
-<p class="price">Rp16.000</p>
+<p class="price">Rp16.000</p><button class="cart" onclick="addToCart('Yoghurt Matcha',16000)">Tambah Keranjang</button>
+<button class="wa" onclick="orderWA('Yoghurt Matcha')">WhatsApp</button>
+<button class="gofood" onclick="gofood()">GoFood</button>
 
-<button class="cart" onclick="addToCart('Yoghurt Matcha',16000)">
-Tambah Keranjang
-</button>
-
-<button class="wa" onclick="orderWA('Yoghurt Matcha')">
-WhatsApp
-</button>
-
-<button class="gofood" onclick="gofood()">
-GoFood
-</button>
-</div>
-
-
-<div class="card">
+</div><div class="card">
 <img src="5.png">
 <h3>Lemonade Matcha</h3>
-<p class="price">Rp12.000</p>
+<p class="price">Rp12.000</p><button class="cart" onclick="addToCart('Lemonade Matcha',12000)">Tambah Keranjang</button>
+<button class="wa" onclick="orderWA('Lemonade Matcha')">WhatsApp</button>
+<button class="gofood" onclick="gofood()">GoFood</button>
 
-<button class="cart" onclick="addToCart('Lemonade Matcha',12000)">
-Tambah Keranjang
-</button>
-
-<button class="wa" onclick="orderWA('Lemonade Matcha')">
-WhatsApp
-</button>
-
-<button class="gofood" onclick="gofood()">
-GoFood
-</button>
-</div>
-
-</div>
-
-
-<footer>
+</div></div><footer>
 <p>Hey Matcha Kemayoran</p>
 <p>Matcha Minuman Kekinian 🍵</p>
-</footer>
+</footer><div id="toast"></div><script>
 
-
-<div id="toast"></div>
-
-<script>
+function closePromo(){
+document.getElementById("promoPopup").style.display="none";
+}
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name,price){
-
 cart.push({name,price});
 localStorage.setItem("cart",JSON.stringify(cart));
-
-showToast(name + " ditambahkan ke keranjang 🛒");
-
+showToast(name+" ditambahkan ke keranjang 🛒");
 }
 
 function showToast(text){
-
-let toast = document.getElementById("toast");
-
-toast.innerText = text;
+let toast=document.getElementById("toast");
+toast.innerText=text;
 toast.classList.add("show");
 
 setTimeout(()=>{
 toast.classList.remove("show");
 },3000);
-
 }
 
 function orderWA(menu){
-
 let pesan="Halo saya mau pesan "+menu;
-
-window.open(
-"https://wa.me/62881024784926?text="+encodeURIComponent(pesan)
-
-);
-
+window.open("https://wa.me/62881024784926?text="+encodeURIComponent(pesan));
 }
 
 function gofood(){
